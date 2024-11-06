@@ -1,19 +1,22 @@
 #include <stdio.h>
-/* Suma pagos.
-El programa obtiene la suma de los pagos realizados el ˙ltimo mes.
-PAG y SPA: variables de tipo real.*/
+#include <math.h>
+/* Suma cuadrados.
+El programa, al recibir como datos un grupo de enteros positivos, obtiene el
+‚û•cuadrado de los mismos y la suma correspondiente a dichos cuadrados. */
 void main(void)
 {
-float PAG, SPA = 0;
-printf(ìIngrese el primer pago:\tî);
-scanf(ì%fî, &PAG);
-/* Observa que al utilizar la estructura do-while al menos se necesita un pago.*/
-do
+int NUM;
+long CUA, SUC = 0;
+printf(‚Äú\nIngrese un n√∫mero entero -0 para terminar-:\t‚Äù);
+scanf(‚Äú%d‚Äù, &NUM);
+while (NUM)
+/* Observa que la condici√≥n es verdadera mientras el entero es diferente de cero. */
 {
-SPA = SPA + PAG;
-printf(ìIngrese el siguiente pago -0 para terminar-:\t ì);
-scanf(ì%fî, &PAG);
+CUA = pow (NUM, 2);
+printf(‚Äú%d al cubo es %ld‚Äù, NUM, CUA);
+SUC = SUC + CUA;
+printf(‚Äú\nIngrese un n√∫mero entero -0 para terminar-:\t‚Äù);
+scanf(‚Äú%d‚Äù, &NUM);
 }
-while (PAG);
-printf(ì\nEl total de pagos del mes es: %.2fî, SPA);
+printf(‚Äú\nLa suma de los cuadrados es %ld‚Äù, SUC);
 }
